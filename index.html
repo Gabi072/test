@@ -222,24 +222,22 @@
     &copy; 2025 Valerica Gligore – Psiholog Clinician. Toate drepturile rezervate.
   </footer>
 
-  <script>
-    // Funcție simplă pentru animația fade-in la scroll
-    const sections = document.querySelectorAll('section');
+ <script>
+  document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+      const targetID = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetID);
+
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 60, // ajustează după înălțimea navbar-ului
+          behavior: 'smooth'
         });
-      }, 
-      { threshold: 0.1 }
-    );
-
-    sections.forEach(section => {
-      observer.observe(section);
+      }
     });
-  </script>
+  });
+ </script>
 </body>
 </html>
