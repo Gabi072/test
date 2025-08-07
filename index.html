@@ -7,7 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     html {
-      scroll-behavior: smooth;
+      /* scroll behavior lin nu îl punem aici, îl facem cu JS pentru viteză */
+      scroll-padding-top: 70px; /* pentru navbar fix */
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -16,101 +17,87 @@
       margin: 0;
       line-height: 1.6;
     }
-
-    /* Bara de navigare fixă sus */
+    /* Navbar */
     .navbar {
       background-color: #1e3c72;
-      overflow: hidden;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 999;
       display: flex;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      gap: 2rem;
+      padding: 1rem 0;
     }
-
     .navbar a {
       color: white;
-      padding: 16px 20px;
       text-decoration: none;
-      font-weight: bold;
-      display: block;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
-
     .navbar a:hover {
-      background-color: #2a5298;
+      color: #2a5298;
+      text-decoration: underline;
     }
-
-    /* Lasă spațiu sub navbar fix */
     header {
       background: linear-gradient(135deg, #2a5298, #1e3c72);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
-      margin-top: 60px; /* înălțimea navbar-ului */
+      padding: 4rem 1rem 2rem;
+      margin-top: 3.8rem; /* spațiu pt navbar fix */
     }
-
+    header img.logo {
+      width: 100px;
+      height: auto;
+      margin: 0 auto 1rem;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
+    }
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-
     header p {
       font-size: 1.2rem;
+      margin-top: 0;
     }
-
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
+      max-width: 900px;
+      margin: 2rem auto 4rem;
       padding: 0 1rem;
     }
-
-    /* Toate secțiunile au spațiu de scroll sus egal cu navbar */
     section {
       background-color: #fff;
       padding: 2rem;
       margin-bottom: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1s ease;
-      opacity: 0;
-      transform: translateY(20px);
-      scroll-margin-top: 70px; /* înălțimea navbar */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      scroll-margin-top: 70px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    /* Când secțiunea este vizibilă, facem fade in și slide up */
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
-
     h2 {
       color: #1e3c72;
       margin-bottom: 1rem;
       border-bottom: 2px solid #eee;
       padding-bottom: 0.5rem;
     }
-
     ul {
       padding-left: 1.2rem;
     }
-
     a {
       color: #1e3c72;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     blockquote {
       font-style: italic;
       color: #666;
@@ -118,16 +105,14 @@
       border-left: 4px solid #ccc;
       padding-left: 15px;
     }
-
     .article-image {
       display: block;
       margin: 2rem auto;
       width: 80%;
       max-width: 500px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
     footer {
       text-align: center;
       background: #eee;
@@ -137,26 +122,25 @@
   </style>
 </head>
 <body>
-
-  <!-- BARA DE NAVIGARE -->
-  <div class="navbar">
-    <a href="#top">Acasă</a>
-    <a href="#despre">Despre mine</a>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#despre-mine">Despre mine</a>
     <a href="#servicii">Servicii</a>
     <a href="#obiective">Obiective</a>
-    <a href="#poveste">Povestea mea</a>
+    <a href="#povestea-mea">Povestea mea</a>
     <a href="#articol">Articol</a>
     <a href="#program">Program</a>
     <a href="#contact">Contact</a>
-  </div>
+  </nav>
 
-  <header id="top">
+  <header id="home">
+    <img src="images/logo.png" alt="Logo Valerica Gligore" class="logo" />
     <h1>Valerica Gligore</h1>
     <p>Psiholog Clinician – Psihoterapie pentru copii, adolescenți și adulți</p>
   </header>
 
   <main>
-    <section id="despre">
+    <section id="despre-mine">
       <h2>Despre mine</h2>
       <p>Sunt psiholog clinician și psihoterapeut în formare psihanalitică, membră în Colegiul Psihologilor din România. Cu peste 400 de ore de analiză personală și formare profesională, ofer un cadru empatic, sigur și confidențial pentru explorare interioară și vindecare.</p>
     </section>
@@ -165,7 +149,7 @@
       <h2>Servicii oferite</h2>
       <ul>
         <li>Psihoterapie individuală – 50 min – 250 RON</li>
-        <li>Evaluare psihologică - Minim 3 ședințe</li>
+        <li>Evaloare Psihologica - Min 3 Sedinte </li>
         <li>Sesiuni online prin apel video</li>
         <li>Sprijin emoțional pentru copii, adolescenți și vârstnici</li>
       </ul>
@@ -183,7 +167,7 @@
       </ul>
     </section>
 
-    <section id="poveste">
+    <section id="povestea-mea">
       <h2>Povestea mea</h2>
       <p>Ofer un spațiu în care nu trebuie să fii „bine”. Poți veni cu tot ceea ce doare, cu tot ceea ce nu știi încă cum să înțelegi sau să exprimi. Mă angajez într-un proces autentic de însoțire, bazat pe ascultare profundă, prezență și respect pentru ritmul interior al fiecărei persoane.</p>
       <blockquote>
@@ -222,22 +206,21 @@
     &copy; 2025 Valerica Gligore – Psiholog Clinician. Toate drepturile rezervate.
   </footer>
 
- <script>
-  document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetID = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetID);
-
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 60, // ajustează după înălțimea navbar-ului
-          behavior: 'smooth'
-        });
-      }
+  <script>
+    // Scroll smooth rapid cu JS
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetID = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetID);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 65, // ajustează dacă navbar e altă înălțime
+            behavior: 'smooth'
+          });
+        }
+      });
     });
-  });
- </script>
+  </script>
 </body>
 </html>
