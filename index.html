@@ -41,21 +41,6 @@
       color: #2a5298;
     }
 
-    /* Hamburger button for mobile (optional) */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      margin-bottom: 2rem;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-      transition: all 0.3s ease;
-    }
-
     /* Header */
     header {
       margin-left: 220px;
@@ -119,9 +104,6 @@
         margin-left: 0;
         padding: 2rem 1rem;
       }
-      .hamburger {
-        display: flex;
-      }
     }
   </style>
 </head>
@@ -143,40 +125,58 @@
   </header>
 
   <main>
-    <!-- Exemplu secțiuni: înlocuiește cu conținutul de pe site-ul tău -->
     <section id="despre-mine">
       <h2 class="section-title">Despre mine</h2>
-      <p>Informații despre experiența profesională și parcursul Valericăi Gligore.</p>
+      <p>Sunt psiholog clinician și psihoterapeut în formare psihanalitică, membră în Colegiul Psihologilor din România. Cu peste 400 de ore de analiză personală și formare profesională, ofer un cadru empatic, sigur și confidențial pentru explorare interioară și vindecare.</p>
     </section>
 
     <section id="servicii">
-      <h2 class="section-title">Servicii</h2>
-      <p>Psihoterapie pentru copii, adolescenți și adulți, consiliere și suport psihologic.</p>
+      <h2 class="section-title">Servicii oferite</h2>
+      <ul>
+        <li>Psihoterapie individuală – 50 min – 250 RON</li>
+        <li>Evaluare psihologică – minim 3 ședințe</li>
+        <li>Sesiuni online prin apel video</li>
+        <li>Sprijin emoțional pentru copii, adolescenți și vârstnici</li>
+      </ul>
     </section>
 
     <section id="obiective">
-      <h2 class="section-title">Obiective</h2>
-      <p>Scopul terapiei este dezvoltarea echilibrului emoțional și a stimei de sine.</p>
+      <h2 class="section-title">Obiective urmărite în terapie</h2>
+      <ul>
+        <li>Depresie, anxietate, atacuri de panică</li>
+        <li>Doliu, traume, pierderi emoționale</li>
+        <li>Stima de sine scăzută</li>
+        <li>Blocaje relaționale și personale</li>
+        <li>Abilități de comunicare și exprimare</li>
+        <li>Dezvoltare personală</li>
+      </ul>
     </section>
 
     <section id="povestea-mea">
       <h2 class="section-title">Povestea mea</h2>
-      <p>Traseul personal și profesional care m-a adus în domeniul psihologiei clinice.</p>
+      <p>Ofer un spațiu în care nu trebuie să fii „bine”. Poți veni cu tot ceea ce doare, cu tot ceea ce nu știi încă cum să înțelegi sau să exprimi. Mă angajez într-un proces autentic de însoțire, bazat pe ascultare profundă, prezență și respect pentru ritmul interior al fiecărei persoane.</p>
+      <blockquote>„Oamenii nu se vindecă prin sfaturi, ci prin prezența cuiva care poate rămâne acolo cu ei, în durere.”</blockquote>
     </section>
 
     <section id="articol">
-      <h2 class="section-title">Articol</h2>
-      <p>Ultimele articole și sfaturi pentru sănătatea mentală și emoțională.</p>
+      <h2 class="section-title">Articol: Dezamăgirea unei note slabe – perspectiva psihanalitică asupra trăirilor adolescentului</h2>
+      <p>În viața psihică a adolescentului, o notă nesatisfăcătoare poate declanșa un vârtej de trăiri emoționale intense, adesea neînțelese de adulții din jur. Din perspectiva psihanalitică, acest moment nu este doar o simplă reacție la un eșec școlar, ci un loc de condensare a conflictelor interne, a luptei dintre dorințele proprii și exigențele supraeu-lui, a temerilor legate de iubire, acceptare și valoare personală.</p>
+      <p>Adolescentul, aflat în plină construcție a identității, trăiește evaluările externe – cum este o notă – ca pe o judecată globală asupra ființei sale. O notă slabă poate reactiva sentimente infantile de neputință, rușine sau abandon. Dacă părinții, în trecut, au legat iubirea de performanță, adolescentul poate resimți o notă mică nu doar ca un eșec academic, ci ca o pierdere a iubirii sau ca o dovadă că nu este „destul de bun”.</p>
+      <p>În spatele furiei, negării sau apatiei care pot apărea la suprafață, se pot ascunde sentimente profunde de dezamăgire față de sine, vinovăție sau chiar fantasme de pedeapsă. În unele cazuri, nota poate deveni un simptom – un mod inconștient de a transmite un conflict nespus, de a provoca o reacție sau de a susține o identificare negativă cu o figură parentală percepută ca eșuată.</p>
+      <p>Din perspectiva psihanalitică, ceea ce contează nu este doar nota în sine, ci semnificația pe care adolescentul i-o atribuie și rețeaua de fantasme, dorințe și temeri pe care o reactivează. O abordare empatică, conțințătoare, care nu se grăbește să corecteze sau să explice, ci lasă spațiu pentru exprimarea acestor trăiri, poate deschide calea către o mai bună înțelegere de sine și o relație mai sănătoasă cu performanța și eșecul.</p>
     </section>
 
     <section id="program">
-      <h2 class="section-title">Program</h2>
-      <p>Orarul de consultații și modalități de programare.</p>
+      <h2 class="section-title">Program și locație</h2>
+      <p>Aleea Fuiorului Nr 1, București</p>
+      <p>Ședințe și online</p>
+      <p>Program: Luni – Vineri, 10:00 – 18:00</p>
     </section>
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
-      <p>Formular de contact, e-mail și telefon pentru programări.</p>
+      <p>Telefon / WhatsApp: <a href="tel:+40770232937">0770232937</a></p>
+      <p>Email: <a href="mailto:vali_robu@yahoo.com">vali_robu@yahoo.com</a></p>
     </section>
   </main>
 
