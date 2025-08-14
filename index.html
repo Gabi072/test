@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Valerica Gligore – Psiholog Clinician</title>
+  <title>Gligore Valerica – Psiholog Clinician</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -13,18 +13,22 @@
       margin: 0;
       line-height: 1.6;
     }
-    /* Navbar */
+
+    /* Navbar vertical */
     .navbar {
-      background-color: #1e3c72;
+      background-color: #000;
       position: fixed;
       top: 0;
-      width: 100%;
-      z-index: 999;
+      left: 0;
+      width: 220px;
+      height: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: start;
+      padding: 2rem 1rem;
       gap: 2rem;
-      padding: 1rem 0;
     }
+
     .navbar a {
       color: white;
       text-decoration: none;
@@ -32,17 +36,17 @@
       font-size: 1rem;
       transition: color 0.3s ease;
     }
+
     .navbar a:hover {
       color: #2a5298;
     }
-    /* Hamburger button */
+
+    /* Hamburger button for mobile (optional) */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      position: absolute;
-      left: 20px;
-      top: 15px;
+      margin-bottom: 2rem;
     }
     .hamburger div {
       width: 25px;
@@ -51,69 +55,32 @@
       margin: 4px 0;
       transition: all 0.3s ease;
     }
-    /* Mobile menu */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background-color: #1e3c72;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      padding: 1rem 0;
-      animation: slideDown 0.3s ease forwards;
-    }
-    .mobile-menu a {
-      color: white;
-      padding: 0.8rem;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .mobile-menu a:hover {
-      background-color: #2a5298;
-    }
-    @keyframes slideDown {
-      from {opacity: 0; transform: translateY(-10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      .navbar {
-        justify-content: flex-end;
-        padding-right: 20px;
-      }
-      .navbar a {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
+
+    /* Header */
     header {
-      background: linear-gradient(135deg, #2a5298, #1e3c72);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      margin-top: 3.8rem;
+      margin-left: 220px;
+      padding: 4rem 2rem 2rem;
+      text-align: left;
     }
-    header img.logo {
-      width: 100px;
-      height: auto;
-      margin: 0 auto 1rem;
-      display: block;
-      border-radius: 50%;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #1e3c72;
     }
-    header p {
+    header h2 {
+      margin: 0.5rem 0 0;
       font-size: 1.2rem;
-      margin-top: 0;
+      font-weight: 400;
+      color: #333;
     }
+
     main {
+      margin-left: 220px;
       max-width: 900px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
+      margin-top: 2rem;
+      padding: 0 1rem 4rem;
     }
+
     section {
       background-color: #fff;
       padding: 2rem;
@@ -127,35 +94,39 @@
       transform: translateY(-5px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
-    h2 {
+
+    h2.section-title {
       color: #1e3c72;
       margin-bottom: 1rem;
       border-bottom: 2px solid #eee;
       padding-bottom: 0.5rem;
     }
-    .article-image {
-      display: block;
-      margin: 2rem auto;
-      width: 80%;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+
     footer {
+      margin-left: 220px;
       text-align: center;
       background: #eee;
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      header, main, footer {
+        margin-left: 0;
+        padding: 2rem 1rem;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <a href="#home">Home</a>
     <a href="#despre-mine">Despre mine</a>
     <a href="#servicii">Servicii</a>
@@ -164,40 +135,53 @@
     <a href="#articol">Articol</a>
     <a href="#program">Program</a>
     <a href="#contact">Contact</a>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#despre-mine">Despre mine</a>
-      <a href="#servicii">Servicii</a>
-      <a href="#obiective">Obiective</a>
-      <a href="#povestea-mea">Povestea mea</a>
-      <a href="#articol">Articol</a>
-      <a href="#program">Program</a>
-      <a href="#contact">Contact</a>
-    </div>
   </nav>
 
   <header id="home">
-    <img src="images/logo.png" alt="Logo Valerica Gligore" class="logo" />
-    <p>Psiholog Clinician – Psihoterapie pentru copii, adolescenți și adulți</p>
+    <h1>Gligore Valerica</h1>
+    <h2>Psiholog Clinician</h2>
   </header>
 
   <main>
-    <!-- Secțiunile tale aici (le păstrezi pe cele existente) -->
+    <!-- Exemplu secțiuni: înlocuiește cu conținutul de pe site-ul tău -->
+    <section id="despre-mine">
+      <h2 class="section-title">Despre mine</h2>
+      <p>Informații despre experiența profesională și parcursul Valericăi Gligore.</p>
+    </section>
+
+    <section id="servicii">
+      <h2 class="section-title">Servicii</h2>
+      <p>Psihoterapie pentru copii, adolescenți și adulți, consiliere și suport psihologic.</p>
+    </section>
+
+    <section id="obiective">
+      <h2 class="section-title">Obiective</h2>
+      <p>Scopul terapiei este dezvoltarea echilibrului emoțional și a stimei de sine.</p>
+    </section>
+
+    <section id="povestea-mea">
+      <h2 class="section-title">Povestea mea</h2>
+      <p>Traseul personal și profesional care m-a adus în domeniul psihologiei clinice.</p>
+    </section>
+
+    <section id="articol">
+      <h2 class="section-title">Articol</h2>
+      <p>Ultimele articole și sfaturi pentru sănătatea mentală și emoțională.</p>
+    </section>
+
+    <section id="program">
+      <h2 class="section-title">Program</h2>
+      <p>Orarul de consultații și modalități de programare.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Formular de contact, e-mail și telefon pentru programări.</p>
+    </section>
   </main>
 
   <footer>
-    &copy; 2025 Valerica Gligore – Psiholog Clinician. Toate drepturile rezervate.
+    &copy; 2025 Gligore Valerica – Psiholog Clinician. Toate drepturile rezervate.
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'flex';
-      }
-    }
-  </script>
 </body>
 </html>
